@@ -1,0 +1,48 @@
+Configuracion del GIT:
+git config --list --> Muestra la lista de configuraciones por defecto del git.
+git config --list --show-origin --> Muestra donde estan las configuraciones guardadas.
+git congig --global user.name "name" -->Para cambiar el nombre del usuario del git.
+git congig --global user.email  "email" --> Para cambiar el correo del usuario del git.
+
+Comandos generales:
+cat archivo --> Podemos observar el contenido del archivo por la terminal.
+code archivo --> Podemos abrir nuesto editor de texto para modificar el archivo alli.
+
+Comandos de ejecucion de GIT:
+git init -->Empezar en tu carpeta un repocitorio
+git add archivo --> Arranca el archivo a tu repositorio.
+git commit -m "version 1" --> Es el que guara en la db los ultimos cambios y el -m es para agregar un comentario el cual ira dentro de comillas dobles.
+git add . -->guarda totos dolo cambios que halla hecho en todos los archivos dentro de la carpeta del repositorio.
+git status --> Muestra los cambios realizados en la DB.
+git show --> Muestra los cambios historicos realizados, con descripcion de quien lo ha realizado.
+git log --all --graph --> Muestra el historico de todo el repositorio y sus ramas.
+git log --all --graph  --decorate --oneline --> Muestra el historico de todo el repositorio y sus ramas mas comprimido.
+git log archivo --> Muestra el historico de un archivo.
+git branch nombredelarama --> Crea ramas de nuestro proyecto.
+git checkout nombredelarama --> Nos direcciona a cual rama queremos ir.
+git remote namedelrepositorioremoto direcciondelrepositorio --> vincula el repositorio remoto de github a nuestro repositorio local.
+git push --> Envia a otro repositorio tu archivos o repositorio.
+git fetch --> Trae actualizaciones del repositorio hacia el repocitorio tuyo local.
+git merge --> Para copiar los archivos hacia los mios del repositorio. 
+-TAG:
+git tag -a nombredeltag #commit --> crea un tag de un commit para crear un referente de hasta donde va cada versionamiento, entre otras cosas.
+git tag -d nombre-del-tag --> Borrar un tag en el repositorio local.
+git tag o git show-ref --tags --> Listar los tags de nuestro repositorio local.
+git push origin --tags --> Publicar un tag en el repositorio remoto.
+git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag --> Borrar un tag del repositorio remoto.
+-END TAG 
+git pull namedelrepositorioremoto namedelrepositorio --> Obtiene repositorio o archivos hacia tu repositorio.
+git pull namedelrepositorioremoto main --allow-unrelated-histories --> Para traer todo con el historial del repositorio al cual lo estamos obteniendo.
+git rm --cached archivo --> Remueve el archivo del cache si cometemos algun error antes de hacer commit, cuando el archivo esta en el estado de git add.
+git diff commit# commit# --> Para comparar los cambios de diferentes commits de nuestro proyecto.
+git reset commit# --hard --> Hace un reverso a todo los cambios que hayas hecho a la version que hayas seleccionado (El mas comun pero el mas peligroso).
+git reset commit# --soft --> realiza un reverso al commit seleccionado  de la version anterior pero los documentos que esten en stading quedan ahi.
+git checkout commit# archivo --> vuelve al estado del comid anterior para ser visualizado, pero este queda en un estado stading  y esto hace que sea muy peligroso ya que al hacer commit, se establecera como ultima version.
+git checkout master archivo --> Vuelve al la ultima version del archivo.
+git rm --force --> Elimina los archivos de Git y del disco duro. Git guarda todo, por lo que podemos recuperar archivos eliminados si es necesario (empleando comandos avanzados).
+git merge 
+
+Creacion de llaves SSH:
+ssh-keygen -t rsa -b 4096 -C "email" --> Este comando es para generar una llave y asociarla a un correo especifico.
+eval $(ssh-agent -s) --> Comprueba que exista el proceso de las llaves en el equipo.
+ssh-add /ruta/.ssh/id_rsa --> Para agregar al programa "proceso" la llave publica creada.
